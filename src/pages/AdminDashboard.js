@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserDetails, logOut } from '../services/operations/adminAPI';
 import io from "socket.io-client"
 import { useNavigate } from 'react-router-dom';
-const socket = io("https://socialmedia-post.onrender.com"); //connect to the server
+const socket = io("https://socialmedia-post.onrender.com",{
+    transports:["websocket"],
+}); //connect to the server
 function AdminDashboard() {
     const {token} = useSelector((state) => state.auth);
     const [userData,setUserData] = useState([]);

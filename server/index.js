@@ -19,6 +19,7 @@ const io = new Server(server, {
     cors: {
         origin: (origin, callback) => {
             const allowedOrigins = [
+                'https://social-media-post-6a8rw12i5-raj-aryans-projects-9e1bf71a.vercel.app',
                 "https://social-media-post-seven.vercel.app",
                 "https://social-media-post-raj-aryans-projects-9e1bf71a.vercel.app",
                 "https://social-media-post-git-main-raj-aryans-projects-9e1bf71a.vercel.app",
@@ -45,6 +46,7 @@ app.use(
     cors({
         origin: (origin, callback) => {
             const allowedOrigins = [
+                'https://social-media-post-6a8rw12i5-raj-aryans-projects-9e1bf71a.vercel.app',
                 "https://social-media-post-seven.vercel.app",
                 "https://social-media-post-raj-aryans-projects-9e1bf71a.vercel.app",
                 "https://social-media-post-git-main-raj-aryans-projects-9e1bf71a.vercel.app",
