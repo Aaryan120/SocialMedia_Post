@@ -5,6 +5,8 @@ A web-based application that allows users to submit their name, social media han
 
 ## Features
 
+- To login to admin username: Raj_Aryan, password: 1212
+
 ### User Features:
 - Submit name and social media handle.
 - Upload multiple images (e.g., JPEG, PNG).
@@ -89,6 +91,7 @@ user-submission-dashboard/
 ### Admin Routes
 - **GET /api/v1/admin/adminDashboard**: Fetch all submissions for the dashboard.
 - **POST /api/v1/admin/logout**: Admin logout.
+- To login to admin username: Raj_Aryan, password: 1212
 
 ## Real-Time Updates
 The system uses Socket.IO to provide real-time updates on the admin dashboard when a new submission is made.
