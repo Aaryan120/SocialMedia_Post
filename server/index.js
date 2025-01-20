@@ -15,12 +15,24 @@ const http = require("http");
 const {Server} = require("socket.io")
 const server = http.createServer(app)
 
-const io = new Server(server,{
-    cors:{
-        origin: "http://localhost:3000",
-        credentials:true,
-    }
-})
+const io = new Server(server, {
+    cors: {
+        origin: (origin, callback) => {
+            const allowedOrigins = [
+                "https://social-media-post-raj-aryans-projects-9e1bf71a.vercel.app/",
+                "https://social-media-post-git-main-raj-aryans-projects-9e1bf71a.vercel.app/",
+            ];
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Origin not allowed by CORS"));
+            }
+        },
+        credentials: true,
+        methods: ["GET", "POST"],
+        allowedHeaders: ["Content-Type", "Authorization"], 
+    },
+});
 PORT = process.env.PORT || 4000;
 
 
@@ -30,7 +42,17 @@ database.dbConnect();
 app.use(express.json());
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: (origin, callback) => {
+            const allowedOrigins = [
+                "https://social-media-post-raj-aryans-projects-9e1bf71a.vercel.app/",
+                "https://social-media-post-git-main-raj-aryans-projects-9e1bf71a.vercel.app/",
+            ];
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
         credentials:true,
     })
 )
